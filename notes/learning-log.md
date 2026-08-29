@@ -22,3 +22,54 @@
 ### Next
 
 Linear algebra intuition for neural networks
+
+---
+
+## 2026-08-29
+
+### Learned
+
+- Vectors and dot products
+- Matrix multiplication as many neuron dot products
+- Layers, neurons, weights, and bias
+- ReLU and why activations add non-linearity
+- Forward pass through a tiny 2-layer network
+- Loss as a measure of prediction error
+- Gradient intuition and gradient descent
+- Learning-rate behavior: slow, convergent, and divergent cases
+- PyTorch autograd: `requires_grad`, `loss.backward()`, `.grad`
+- Why `torch.no_grad()` is used during parameter updates
+- Why gradients must be cleared with `zero_()`
+- Trainable parameters vs activations vs gradients
+- Backpropagation intuition through multiple parameters
+
+### Key mental models
+
+- One neuron = one dot product + bias (+ activation)
+- One layer = many neurons evaluated together
+- `[batch, input_features] @ [input_features, neurons] -> [batch, neurons]`
+- Parameters are learned; activations are computed; gradients tell parameters how to change
+- Forward pass: input -> prediction -> loss
+- Backward pass: loss -> gradients for parameters
+- Gradient = sensitivity of loss to a parameter
+- Gradient descent update: `new_weight = old_weight - learning_rate * gradient`
+- Learning rate = step size; too large can overshoot and diverge
+- Backpropagation = chain rule applied backward through the computation graph
+
+### Experiments completed
+
+- Trained a one-parameter model toward `w = 5`
+- Compared learning rates `0.01`, `0.1`, and `0.6`
+- Observed stable convergence vs divergence
+- Trained weight and bias together for `prediction = x*w + b`
+- Inspected separate gradients for multiple trainable parameters
+
+### Current position
+
+- Day 1 complete
+- Day 2 concepts substantially covered; repository artifact `01-foundations/linear_algebra.py` and Day 2 notes still need to be committed before closing the issue
+- Some Day 3/4/5/6 concepts have been previewed ahead of schedule, but those issues should not be marked complete until their build artifacts and definitions of done are satisfied
+
+### Next
+
+Finish Day 2 artifact and notes, then move into linear regression from scratch without autograd.
