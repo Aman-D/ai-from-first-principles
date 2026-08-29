@@ -104,6 +104,14 @@ Linear algebra intuition for neural networks
 - Observed loss fall from about `2.69` to about `0.0004`
 - Observed final predictions move close to `[0, 1, 1, 2]`
 
+### Week 1 retrospective
+
+- Completed the Day 7 checkpoint with a score of **16/17**.
+- Can explain the complete learning loop without framework jargon: input -> prediction -> loss -> gradients -> parameter update -> repeat.
+- Strongest areas: tensor/layer shape reasoning, the training loop, and gradient/gradient-descent intuition.
+- Precision to keep reinforcing: weighted sums include the final sum + bias, activations add nonlinearity, gradients represent loss sensitivity, and gradients should be cleared before the next backward pass.
+- Added `notes/week-1-retrospective.md` with the full Week 1 summary and Week 2 questions.
+
 ### Current position
 
 - Day 1 complete
@@ -112,8 +120,8 @@ Linear algebra intuition for neural networks
 - Day 4 complete: derivative intuition, chain rule, partial derivatives, and numerical gradient checking
 - Day 5 complete: single neuron, ReLU/tanh outputs, gradients, and saturation intuition
 - Day 6 complete: first MLP trained end-to-end with PyTorch autograd
-- Day 7 is next: Week 1 retrospective and neural-network explanation
+- Day 7 complete: Week 1 retrospective and neural-network explanation
 
 ### Next
 
-Day 7 — consolidate Week 1, explain the full forward/loss/backward/update loop, and identify remaining gaps before Week 2.
+Week 2 — deepen computation graphs, backpropagation, and autograd from first principles.
