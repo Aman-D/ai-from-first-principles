@@ -42,6 +42,10 @@ Linear algebra intuition for neural networks
 - Why gradients must be cleared with `zero_()`
 - Trainable parameters vs activations vs gradients
 - Backpropagation intuition through multiple parameters
+- Numerical derivatives using a small epsilon
+- Analytical vs numerical gradient checking
+- Chain rule as multiplication of local effects
+- Partial derivatives for multiple parameters
 
 ### Key mental models
 
@@ -55,6 +59,8 @@ Linear algebra intuition for neural networks
 - Gradient descent update: `new_weight = old_weight - learning_rate * gradient`
 - Learning rate = step size; too large can overshoot and diverge
 - Backpropagation = chain rule applied backward through the computation graph
+- Epsilon = a tiny step used to estimate a derivative numerically
+- Partial derivative = change one parameter while treating the others as fixed
 
 ### Experiments completed
 
@@ -68,14 +74,19 @@ Linear algebra intuition for neural networks
 - Implemented prediction, squared-error loss, manual gradient calculation, and parameter updates
 - Compared learning rates `0.001`, `0.01`, and `0.1`
 - Observed `0.001` learning slowly, `0.01` converging steadily, and `0.1` reaching the optimum quickly for the toy problem
+- Built `01-foundations/gradient_check.py`
+- Verified `f(w)=w^2` numerical gradient ≈ analytical gradient at `w=3`
+- Verified the Day 3 linear-regression gradient numerically (`≈ -16`) against the analytical gradient (`-16`)
+- Practiced partial derivatives with `f(w,b)=w^2+b^2`
 
 ### Current position
 
 - Day 1 complete
 - Day 2 complete
 - Day 3 complete: linear regression from scratch without autograd
-- Some Day 4/5/6 concepts have been previewed ahead of schedule, but those issues remain open until their build artifacts and definitions of done are satisfied
+- Day 4 complete: derivative intuition, chain rule, partial derivatives, and numerical gradient checking
+- Some Day 5/6 concepts have been previewed ahead of schedule, but those issues remain open until their build artifacts and definitions of done are satisfied
 
 ### Next
 
-Day 4 — derivatives, chain rule, and gradient checking.
+Day 5 — build a neuron from first principles and compare activation functions.
