@@ -24,6 +24,7 @@ Watching or reading alone does not count as completion.
 - [Full Roadmap](./ROADMAP.md)
 - [Learning Method](./LEARNING-METHOD.md)
 - [First Week](./FIRST-WEEK.md)
+- [Week 1 Retrospective](./notes/week-1-retrospective.md)
 
 ## Expected Portfolio Outputs
 
