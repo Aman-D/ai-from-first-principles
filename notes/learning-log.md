@@ -63,13 +63,19 @@ Linear algebra intuition for neural networks
 - Observed stable convergence vs divergence
 - Trained weight and bias together for `prediction = x*w + b`
 - Inspected separate gradients for multiple trainable parameters
+- Built `01-foundations/linear_algebra.py` with dot-product, weighted-sum, and multi-neuron matrix examples
+- Built `01-foundations/linear_regression.py` without autograd
+- Implemented prediction, squared-error loss, manual gradient calculation, and parameter updates
+- Compared learning rates `0.001`, `0.01`, and `0.1`
+- Observed `0.001` learning slowly, `0.01` converging steadily, and `0.1` reaching the optimum quickly for the toy problem
 
 ### Current position
 
 - Day 1 complete
-- Day 2 concepts substantially covered; repository artifact `01-foundations/linear_algebra.py` and Day 2 notes still need to be committed before closing the issue
-- Some Day 3/4/5/6 concepts have been previewed ahead of schedule, but those issues should not be marked complete until their build artifacts and definitions of done are satisfied
+- Day 2 complete
+- Day 3 complete: linear regression from scratch without autograd
+- Some Day 4/5/6 concepts have been previewed ahead of schedule, but those issues remain open until their build artifacts and definitions of done are satisfied
 
 ### Next
 
-Finish Day 2 artifact and notes, then move into linear regression from scratch without autograd.
+Day 4 — derivatives, chain rule, and gradient checking.
