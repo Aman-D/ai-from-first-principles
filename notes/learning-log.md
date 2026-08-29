@@ -50,6 +50,12 @@ Linear algebra intuition for neural networks
 - ReLU behavior for positive vs negative inputs
 - tanh output range `[-1, 1]` and saturation
 - ReLU vs tanh gradient behavior
+- `nn.Linear(in_features, out_features)` as a trainable fully-connected layer
+- `nn.Sequential` as an ordered pipeline of layers/activations
+- MLP flow: layer -> activation -> layer
+- `model.parameters()` as all trainable weights and biases
+- Optimizer responsibilities: clear gradients and update parameters
+- PyTorch SGD as packaged gradient-descent parameter updates
 
 ### Key mental models
 
@@ -67,6 +73,8 @@ Linear algebra intuition for neural networks
 - Partial derivative = change one parameter while treating the others as fixed
 - ReLU: negative input -> output 0, gradient 0; positive input -> output x, gradient 1
 - tanh: preserves sign and squashes outputs to `[-1, 1]`; near ±1 it saturates and gradients become very small
+- `Linear(2,3)` produces 3 values; a later `Linear(3,1)` reduces those to one final output
+- Training loop: forward -> loss -> zero gradients -> backward -> optimizer step -> repeat
 
 ### Experiments completed
 
@@ -88,6 +96,13 @@ Linear algebra intuition for neural networks
 - Compared ReLU and tanh outputs at positive and negative neuron outputs
 - Compared ReLU and tanh gradients at `z=-3` and `z=1`
 - Observed tanh saturation near `-1` and ReLU's zero gradient for negative inputs
+- Built `01-foundations/mlp.py`
+- Created a tiny dataset for `output ≈ x1 + x2`
+- Built `Linear(2,3) -> ReLU -> Linear(3,1)` with `nn.Sequential`
+- Inspected predictions before training
+- Defined MSE loss and trained with PyTorch autograd + SGD
+- Observed loss fall from about `2.69` to about `0.0004`
+- Observed final predictions move close to `[0, 1, 1, 2]`
 
 ### Current position
 
@@ -96,8 +111,9 @@ Linear algebra intuition for neural networks
 - Day 3 complete: linear regression from scratch without autograd
 - Day 4 complete: derivative intuition, chain rule, partial derivatives, and numerical gradient checking
 - Day 5 complete: single neuron, ReLU/tanh outputs, gradients, and saturation intuition
-- Day 6 is next: build and train a small MLP
+- Day 6 complete: first MLP trained end-to-end with PyTorch autograd
+- Day 7 is next: Week 1 retrospective and neural-network explanation
 
 ### Next
 
-Day 6 — build and train a small multilayer perceptron.
+Day 7 — consolidate Week 1, explain the full forward/loss/backward/update loop, and identify remaining gaps before Week 2.
