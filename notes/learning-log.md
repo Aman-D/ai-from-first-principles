@@ -46,6 +46,10 @@ Linear algebra intuition for neural networks
 - Analytical vs numerical gradient checking
 - Chain rule as multiplication of local effects
 - Partial derivatives for multiple parameters
+- Single neuron as weighted sum + bias + activation
+- ReLU behavior for positive vs negative inputs
+- tanh output range `[-1, 1]` and saturation
+- ReLU vs tanh gradient behavior
 
 ### Key mental models
 
@@ -61,6 +65,8 @@ Linear algebra intuition for neural networks
 - Backpropagation = chain rule applied backward through the computation graph
 - Epsilon = a tiny step used to estimate a derivative numerically
 - Partial derivative = change one parameter while treating the others as fixed
+- ReLU: negative input -> output 0, gradient 0; positive input -> output x, gradient 1
+- tanh: preserves sign and squashes outputs to `[-1, 1]`; near ±1 it saturates and gradients become very small
 
 ### Experiments completed
 
@@ -78,6 +84,10 @@ Linear algebra intuition for neural networks
 - Verified `f(w)=w^2` numerical gradient ≈ analytical gradient at `w=3`
 - Verified the Day 3 linear-regression gradient numerically (`≈ -16`) against the analytical gradient (`-16`)
 - Practiced partial derivatives with `f(w,b)=w^2+b^2`
+- Built `01-foundations/neuron.py`
+- Compared ReLU and tanh outputs at positive and negative neuron outputs
+- Compared ReLU and tanh gradients at `z=-3` and `z=1`
+- Observed tanh saturation near `-1` and ReLU's zero gradient for negative inputs
 
 ### Current position
 
@@ -85,8 +95,9 @@ Linear algebra intuition for neural networks
 - Day 2 complete
 - Day 3 complete: linear regression from scratch without autograd
 - Day 4 complete: derivative intuition, chain rule, partial derivatives, and numerical gradient checking
-- Some Day 5/6 concepts have been previewed ahead of schedule, but those issues remain open until their build artifacts and definitions of done are satisfied
+- Day 5 complete: single neuron, ReLU/tanh outputs, gradients, and saturation intuition
+- Day 6 is next: build and train a small MLP
 
 ### Next
 
-Day 5 — build a neuron from first principles and compare activation functions.
+Day 6 — build and train a small multilayer perceptron.
